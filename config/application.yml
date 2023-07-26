@@ -9,3 +9,5 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+OPENAI_API_KEY: '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'
+UNSPLASH_API_KEY: 'iKExGRoYWJl6r8YG2QRdsRcr7ksLGwcBtDl7FPGMvQI'
