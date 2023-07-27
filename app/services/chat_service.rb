@@ -1,7 +1,6 @@
 class ChatService
-
   def conn
-    @_conn = Faraday.new(url: "https://api.openai.com/v1/completions") do |f|
+    Faraday.new(url: "https://api.openai.com/v1/completions") do |f|
       f.headers['Content-Type'] = 'application/json'
       f.headers['Authorization'] = "Bearer #{ENV['OPENAI_API_KEY']}"
     end
@@ -10,7 +9,7 @@ class ChatService
   def get_tools(project)
     payload = {
       "model": "text-davinci-003",
-      "prompt": "What tools do I need to build a deck?",
+      "prompt": project,
       "max_tokens": 200,
       "temperature": 0.5
     }
@@ -20,7 +19,8 @@ class ChatService
         request.body = payload.to_json
       end.body, symbolize_names: true
     )
-
+    
+    # require 'pry'; binding.pry
     JSON.parse(response[:choices][0][:text])
   end
 end
