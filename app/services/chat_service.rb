@@ -19,7 +19,7 @@ class ChatService
         request.body = payload.to_json
       end.body, symbolize_names: true
     )
-    
+   
     response[:choices][0][:text]
   end
 end

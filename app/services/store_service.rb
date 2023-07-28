@@ -1,6 +1,6 @@
 class StoreService
   
-  def get_location(location, radius)
+  def get_store(location, radius)
     get_url("textsearch/json?query=hardware%20store%20location=#{location}&radius=#{radius}key=#{ENV['GOOGLE_API_KEY']}")
   end
 
