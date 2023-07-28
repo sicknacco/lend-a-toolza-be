@@ -4,7 +4,7 @@ RSpec.describe StoreService do
   describe 'instance methods' do
     it "#get_location", :vcr do
       location = "80202"
-      store_service = StoreService.new.get_location(location, 25)
+      store_service = StoreService.new.get_store(location, 25)
 
       expect(store_service).to be_a Hash
       expect(store_service[:results]).to be_an Array
