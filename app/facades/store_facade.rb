@@ -20,4 +20,4 @@ class StoreFacade
     def store_data
       @_store_data ||= service.get_store(@location, @radius)[:results]
     end
-end
+  end
