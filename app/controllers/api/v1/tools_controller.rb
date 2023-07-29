@@ -8,7 +8,7 @@ module Api
         if result
           render json: ToolSerializer.new(result), status: :ok
         else
-          render json: { errors: 'No tools found' }, status: :not_found
+          render json: { errors: 'No tools found in your area' }, status: :not_found
         end
       end
     end
