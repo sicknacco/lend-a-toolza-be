@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Photo
   attr_reader :data,
               :description,

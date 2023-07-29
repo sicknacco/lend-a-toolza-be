@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Store
-  attr_reader :name, 
+  attr_reader :name,
               :formatted_address,
               :id
 
