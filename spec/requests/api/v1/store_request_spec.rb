@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Store", type: :request do
-  describe "Store search by location radius" do
-    it "returns list of stores", :vcr do
-      headers = { "CONTENT_TYPE" => "application/json" }
-      get "/api/v1/stores/80202/25", headers: headers
+RSpec.describe 'Store', type: :request do
+  describe 'Store search by location radius' do
+    it 'returns list of stores', :vcr do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+      get('/api/v1/stores/80202/25', headers:)
 
       stores = JSON.parse(response.body, symbolize_names: true)
 

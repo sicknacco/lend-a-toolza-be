@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe StoreService do
   describe 'instance methods' do
-    it "#get_location", :vcr do
-      location = "80202"
+    it '#get_location', :vcr do
+      location = '80202'
       store_service = StoreService.new.get_store(location, 25)
 
       expect(store_service).to be_a Hash
