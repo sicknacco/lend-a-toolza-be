@@ -41,4 +41,21 @@ RSpec.describe 'Tool Search', type: :request do
       expect(response.body).to_not include("Jackhammer")
     end
   end
+
+  describe 'Single Tool Search' do
+    it "returns a single tool and its attributes" do
+      tool = create(:tool, user_id: 1)
+      get "/api/v1/tools/search?name=#{tool.name}&location=#{tool.address}"
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(response.body).to include(tool.name)
+      expect(response.body).to include(tool.description)
+      expect(response.body).to include(tool.image)
+      expect(response.body).to include(tool.status)
+      expect(response.body).to include(tool.address)
+      expect(response.body).to include(tool.user_id.to_s)
+      expect(response.body).to include(tool.borrower_id.to_s)
+    end
+  end
 end
