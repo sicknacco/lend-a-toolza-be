@@ -67,7 +67,7 @@ bundle exec figaro install
 ```
 6. Get API keys from Google and OpenAI<br>
 [![Google](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white) ](https://developers.google.com/maps)
-[![OpenAI](<img src="https://img.shields.io/badge/OpenAI-412991.svg?stylee&logo=OpenAI&logoColor=white" alt="OpenAI" />) ](https://platform.openai.com/)<br>
+[![OpenAI Badge](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=fff&style=for-the-badge)](https://platform.openai.com/)<br>
 
 7. Add your keys to your `application.yml` like this:
 ```
@@ -93,9 +93,9 @@ git push origin feature/AmazingFeature
 <div style="overflow: auto; height: 200px;">
   <pre>
     <code>
-      get '/api/v1/stores/:location/:radius' -Search for Nearby Stores
-      get '/api/v1/chat_request' -Get Suggestions for Tools 
-      get '/api/v1/tools/search' -Search for Tool by Location
+    get '/api/v1/stores/:location/:radius' -Search for Nearby Stores
+    get '/api/v1/chat_request' -Get Suggestions for Tools 
+    get '/api/v1/tools/search' -Search for Tool by Location
     </code>
   </pre>
 </div>
@@ -270,7 +270,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## API's Used
 [![Google](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white) ](https://developers.google.com/maps)<br>
-[![OpenAI](<img src="https://img.shields.io/badge/OpenAI-412991.svg?stylee&logo=OpenAI&logoColor=white" alt="OpenAI" />) ](https://platform.openai.com/)<br>
+[![OpenAI Badge](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=fff&style=for-the-badge)](https://platform.openai.com/)<br>
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/CrowRising/PlayPal-FE)
 
 ## Authors
