@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :tool do
-    name { Faker::Name.name }
+    name { Faker::Construction.heavy_equipment }
     description { Faker::Lorem.paragraph }
     image { Faker::Lorem.word }
     status { Faker::Lorem.word }
