@@ -14,7 +14,7 @@ This is an SOA app and needs both this repo (back end) AND [![GitHub](https://im
 ### Mod 3 Group Consultancy Project
 Lend-A-Toolza is a crowdsourced tool lending library web application. Designed for folks looking to borrow a particular tool within any given area/location. Lend-A-Toolza has the ability for registered users to upload their lendable tool with a picture, a description of the tool and a borrowing period as well as choose to borrow from a list of available tools in their area.
                                                   <br><br>
-                    <img src="PUT PICTURE HERE" width="" height="">
+                    <img src="https://149845544.v2.pressablecdn.com/wp-content/uploads/2018/12/blog_top-image_tools.jpg" width="600" height="400">
                     
 ## Purpose
 
