@@ -41,6 +41,7 @@ gem 'bootsnap', require: false
 gem 'bcrypt', '~> 3.1.7'
 gem 'faraday'
 gem 'figaro'
+gem 'jsonapi-serializer'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,7 +49,6 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'jsonapi-serializer'
   gem 'launchy'
   gem 'orderly'
   gem 'pry'
