@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Tool Search', type: :request do
   describe 'GET /api/v1/tools/search' do
-    let!(:tool_in_colorado) { create(:tool, name: 'Hammer', address: 'Denver, CO') }
-    let!(:tool_in_california) { create(:tool, name: 'Screwdriver', address: '90210') }
-    let!(:tool_in_nm) { create(:tool, name: 'Drill Press', address: 'NM, 87501') }
+    let!(:tool_in_colorado) { create(:tool, name: 'Hammer', address: 'Denver, CO', borrower_id: nil) }
+    let!(:tool_in_california) { create(:tool, name: 'Screwdriver', address: '90210', borrower_id: nil) }
+    let!(:tool_in_nm) { create(:tool, name: 'Drill Press', address: 'NM, 87501', borrower_id: nil) }
 
     it 'returns a list of tools by name and state' do
       get '/api/v1/tools/search?name=Hammer&location=Denver,%20CO'
@@ -44,7 +44,7 @@ RSpec.describe 'Tool Search', type: :request do
 
   describe 'Single Tool Search' do
     it 'returns a single tool and its attributes' do
-      tool = create(:tool, user_id: 1)
+      tool = create(:tool, user_id: 1, borrower_id: nil)
       get "/api/v1/tools/search?name=#{tool.name}&location=#{tool.address}"
 
       expect(response).to be_successful
