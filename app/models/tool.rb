@@ -13,4 +13,8 @@ class Tool < ApplicationRecord
   scope :search_by_name_and_state_or_zip, lambda { |name, location|
                                             where('name ILIKE ? AND address ILIKE ?', "%#{name}%", "%#{location}%")
                                           }
+
+  def self.all_related_tools(user_id)
+    Tool.where('user_id = ? OR borrower_id = ?', user_id, user_id)
+  end
 end
