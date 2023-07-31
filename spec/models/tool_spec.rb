@@ -10,13 +10,13 @@ RSpec.describe Tool, type: :model do
     it { should validate_presence_of :status }
     it { should validate_presence_of :address }
     it { should validate_presence_of :user_id }
-    it { should validate_presence_of :borrower_id }
+    it { should allow_value(nil).for(:borrower_id) }
   end
 
   describe 'class methods' do
-    let!(:tool_in_colorado) { create(:tool, name: 'Hammer', address: 'Denver, CO') }
-    let!(:tool_in_california) { create(:tool, name: 'Screwdriver', address: '90210') }
-    let!(:tool_in_nm) { create(:tool, name: 'Drill Press', address: 'NM, 87501') }
+    let!(:tool_in_colorado) { create(:tool, name: 'Hammer', address: 'Denver, CO', borrower_id: nil) }
+    let!(:tool_in_california) { create(:tool, name: 'Screwdriver', address: '90210', borrower_id: nil) }
+    let!(:tool_in_nm) { create(:tool, name: 'Drill Press', address: 'NM, 87501', borrower_id: 2) }
 
     it 'returns a list of tools by name and state' do
       result = Tool.search_by_name_and_state_or_zip('Hammer', 'Denver, CO')
