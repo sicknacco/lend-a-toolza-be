@@ -13,7 +13,7 @@ module Api
       end
 
       def show
-        tools = Tool.where(user_id: params[:id])
+        tools = Tool.all_related_tools(params[:id])
         render json: ToolSerializer.new(tools), status: :ok
       end
     end
