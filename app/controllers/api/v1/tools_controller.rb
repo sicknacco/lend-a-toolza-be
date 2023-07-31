@@ -11,6 +11,11 @@ module Api
           render json: { errors: 'No tools found in your area' }, status: :not_found
         end
       end
+
+      def show
+        tools = Tool.all_related_tools(params[:id])
+        render json: ToolSerializer.new(tools), status: :ok
+      end
     end
   end
 end
