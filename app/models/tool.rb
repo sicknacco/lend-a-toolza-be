@@ -6,8 +6,9 @@ class Tool < ApplicationRecord
             :image,
             :status,
             :address,
-            :user_id,
-            :borrower_id, presence: true
+            :user_id, presence: true
+             
+  validates :borrower_id, presence: true, allow_nil: true
 
   scope :search_by_name_and_state_or_zip, lambda { |name, location|
                                             where('name ILIKE ? AND address ILIKE ?', "%#{name}%", "%#{location}%")
