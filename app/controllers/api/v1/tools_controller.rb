@@ -32,6 +32,11 @@ module Api
         render json: ToolSerializer.new(tool), status: :ok
       end
 
+      def destroy
+        tool = Tool.find(params[:id])
+        tool.destroy
+      end
+
       private
 
       def tool_params
