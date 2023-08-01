@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Users Tools', type: :request do
@@ -35,18 +37,17 @@ RSpec.describe 'Users Tools', type: :request do
     it 'returns list of tools borrowed by a user' do
       user_4 = create(:tool, user_id: 4, borrower_id: nil).user_id
       create_list(:tool, 5, user_id: 2, borrower_id: user_4)
-      
 
       get '/api/v1/users/4/tools'
       expect(response).to be_successful
       expect(response.status).to eq(200)
-      
+
       borrowed_tools = JSON.parse(response.body, symbolize_names: true)
       expect(borrowed_tools[:data].count).to eq 6
       borrowed_tools[:data].each do |tool|
         expect(tool[:attributes][:name]).to be_a(String)
         expect(tool[:attributes][:description]).to be_a(String)
-        expect(tool[:attributes][:image]).to be_a(String) 
+        expect(tool[:attributes][:image]).to be_a(String)
         expect(tool[:attributes][:status]).to be_a(String)
         expect(tool[:attributes][:address]).to be_a(String)
         expect(tool[:attributes][:user_id]).to be_a(Integer)
