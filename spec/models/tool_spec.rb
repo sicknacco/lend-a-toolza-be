@@ -53,10 +53,11 @@ RSpec.describe Tool, type: :model do
       create_list(:tool, 2, user_id: 2, borrower_id: 1)
 
       result = Tool.all_related_tools(1)
-
+      results = Tool.all_related_tools(2)
       expect(result.count).to eq(7)
       expect(result).to_not eq(5)
       expect(result).to_not eq(2)
+      expect(results.count).to eq(2)
     end
   end
 end
