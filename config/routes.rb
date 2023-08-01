@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/api/v1/tools/search', to: 'api/v1/tools#search'
   get '/api/v1/users/:id/tools', to: 'api/v1/tools#show'
   post '/api/v1/users/:id/tools', to: 'api/v1/tools#create'
+  patch '/api/v1/users/:id/tools/:id', to: 'api/v1/tools#update'
+  delete '/api/v1/users/:id/tools/:id', to: 'api/v1/tools#destroy'
 end

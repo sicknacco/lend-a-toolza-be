@@ -18,8 +18,23 @@ module Api
       end
 
       def create
-       tool = Tool.create(tool_params)
-       render json: ToolSerializer.new(tool), status: :created
+        tool = Tool.create(tool_params)
+        if tool.save
+          render json: ToolSerializer.new(tool), status: :created
+        else
+          render json: { errors: tool.errors.full_messages.to_sentence }, status: :unprocessable_entity
+        end
+      end
+
+      def update
+        tool = Tool.find(params[:id])
+        tool.update(tool_params)
+        render json: ToolSerializer.new(tool), status: :ok
+      end
+
+      def destroy
+        tool = Tool.find(params[:id])
+        tool.destroy
       end
 
       private

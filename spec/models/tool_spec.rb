@@ -20,15 +20,15 @@ RSpec.describe Tool, type: :model do
 
     it 'returns a list of tools by name and state' do
       result = Tool.search_by_name_and_state_or_zip('Hammer', 'Denver, CO')
-      
+
       expect(result).to eq([tool_in_colorado])
       expect(result).to_not eq([tool_in_california])
       expect(result).to_not eq([tool_in_nm])
     end
-    
+
     it 'returns a list of tools by name and zip' do
       result = Tool.search_by_name_and_state_or_zip('Screwdriver', '90210')
-      
+
       expect(result).to eq([tool_in_california])
       expect(result).to_not eq([tool_in_colorado])
       expect(result).to_not eq([tool_in_nm])
