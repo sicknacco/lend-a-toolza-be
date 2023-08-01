@@ -7,7 +7,7 @@ class Tool < ApplicationRecord
             :status,
             :address,
             :user_id, presence: true
-             
+
   validates :borrower_id, presence: true, allow_nil: true
 
   scope :search_by_name_and_state_or_zip, lambda { |name, location|
