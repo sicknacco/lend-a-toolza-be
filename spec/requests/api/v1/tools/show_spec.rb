@@ -35,6 +35,7 @@ RSpec.describe 'Users Tools', type: :request do
     it 'returns list of tools borrowed by a user' do
       user_4 = create(:tool, user_id: 4, borrower_id: nil).user_id
       create_list(:tool, 5, user_id: 2, borrower_id: user_4)
+      
 
       get '/api/v1/users/4/tools'
       expect(response).to be_successful
