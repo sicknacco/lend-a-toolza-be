@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/api/v1/chat_request', to: 'api/v1/chats#show'
   get '/api/v1/tools/search', to: 'api/v1/tools#search'
   get '/api/v1/users/:id/tools', to: 'api/v1/tools#show'
+  post '/api/v1/users/:id/tools', to: 'api/v1/tools#create'
 end
