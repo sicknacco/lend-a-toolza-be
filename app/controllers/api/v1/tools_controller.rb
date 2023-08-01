@@ -16,6 +16,17 @@ module Api
         tools = Tool.all_related_tools(params[:id])
         render json: ToolSerializer.new(tools), status: :ok
       end
+
+      def create
+       tool = Tool.create(tool_params)
+       render json: ToolSerializer.new(tool), status: :created
+      end
+
+      private
+
+      def tool_params
+        params.require(:tool).permit(:name, :description, :image, :status, :address, :user_id, :borrower_id)
+      end
     end
   end
 end
