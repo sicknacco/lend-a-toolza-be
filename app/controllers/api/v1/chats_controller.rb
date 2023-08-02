@@ -8,7 +8,7 @@ module Api
         chat_service = ChatService.new
         tools = chat_service.get_tools(project)
 
-        render json: { tools: }, status: :ok
+        render json: { tools: tools}, status: :ok
       end
     end
   end
