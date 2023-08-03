@@ -8,10 +8,16 @@ class ChatService
     end
   end
 
+  def parse_tools_response(response_text)
+    tool_lines = response_text.split("\n")
+    tool_lines.reject!(&:empty?).map!(&:strip)
+    tool_lines
+  end
+
   def get_tools(project)
     payload = {
       "model": 'text-davinci-003',
-      "prompt": "What tools do I need to build #{project}?",
+      "prompt": "Give me a list of tools needed to build #{project}?",
       "max_tokens": 200,
       "temperature": 0.5
     }
@@ -21,13 +27,6 @@ class ChatService
         request.body = payload.to_json
       end.body, symbolize_names: true
     )
-
-    def parse_tools_response(response_text)
-
-      tool_lines = response_text.split("\n")
-      tool_lines.reject!(&:empty?).map!(&:strip)
-      tool_lines
-    end
 
     tools_array = parse_tools_response(response[:choices][0][:text])
     tools_array
