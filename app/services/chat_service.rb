@@ -22,6 +22,14 @@ class ChatService
       end.body, symbolize_names: true
     )
 
-    response[:choices][0][:text]
+    def parse_tools_response(response_text)
+
+      tool_lines = response_text.split("\n")
+      tool_lines.reject!(&:empty?).map!(&:strip)
+      tool_lines
+    end
+
+    tools_array = parse_tools_response(response[:choices][0][:text])
+    tools_array
   end
 end
